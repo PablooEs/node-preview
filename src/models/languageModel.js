@@ -19,5 +19,5 @@ function remove(id) {
   return db("languages").where({ id }).del();
 }
 function update(id, changes) {
-  return db("languages").where({ id }).update(changes);
+  return db("languages").where({ id }).update(changes, [id]);
 }

@@ -16,6 +16,7 @@ exports.up = function (knex) {
         .unsigned()
         .references("id")
         .inTable("languages")
+        .notNullable()
         .onDelete("CASCADE")
         .onUpdate("CASCADE");
       tbl.timestamps(true, true);
