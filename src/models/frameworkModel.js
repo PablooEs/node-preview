@@ -11,14 +11,14 @@ module.exports = {
 };
 
 function get() {
-  return db("languages");
+  return db("frameworks");
 }
-function add(language) {
-  return db("languages").insert(language);
+function add(framework) {
+  return db("frameworks").insert(framework);
 }
 function remove(id) {
-  return db("languages").where({ id }).del();
+  return db("frameworks").where({ id }).del();
 }
 function update(id, changes) {
-  return db("languages").where({ id }).update(changes);
+  return db("frameworks").where({ id }).update(changes, [id]);
 }
