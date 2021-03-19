@@ -14,11 +14,13 @@ function get() {
   return db("frameworks");
 }
 function add(framework) {
-  return db("frameworks").insert(framework);
+  return db("frameworks").insert(framework, ["id", "name", "description"]);
 }
 function remove(id) {
   return db("frameworks").where({ id }).del();
 }
 function update(id, changes) {
-  return db("frameworks").where({ id }).update(changes, [id]);
+  return db("frameworks")
+    .where({ id })
+    .update(changes, ["id", "name", "description"]);
 }
